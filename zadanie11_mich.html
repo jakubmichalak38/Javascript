@@ -1,0 +1,25 @@
+<html>
+<body>
+<div style="color:green;font-size:33px;">
+<script language="JavaScript">
+var D1_mich=prompt("Numer dnia =","");
+var G1_mich=prompt("Godznia =","");
+var D2_mich=prompt("Numer dnia =","");
+var G2_mich=prompt("Godzina =","");
+
+var suma
+var suma1
+var suma2
+var a=parseFloat(D1_mich);
+var b=parseFloat(D2_mich);
+var c=parseFloat(G1_mich);
+var d=parseFloat(G2_mich);
+suma1=(a-b)*86400;
+suma2=(d-c)*3600;
+suma=(suma1-suma2);
+
+document.write("Ilosc sekund= "+suma+"<br>");
+</script>
+</div>
+</body>
+</html>
