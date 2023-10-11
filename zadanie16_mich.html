@@ -1,0 +1,23 @@
+<html>
+	<body>
+		<div style="color:black;font-size:49px;">
+			<script language="JavaScript">
+				var a_mic=prompt("Podaj a=","");
+				var b_mic=prompt("Podaj b=","");
+				var a=parseFloat(a_mic);
+				var b=parseFloat(b_mic);
+			
+				krok1 = a*a*a;
+				krok2 = 3*((a*a)*b);
+				krok3 = 3*(a*(b*b));
+				krok4 = b*b*b;
+
+			suma = krok1 + krok2 + krok3 + krok4;
+			document.write("wczytane liczby A =  "+a+"      B = "+b+"<br>");
+
+			document.write("("+a+" + "+b+")^3 = "+a+"^3 + 3*(("+a+")^2)*("+b+") + 3*("+a+")*(("+b+")^"+b+") + "+b+"^3 = "+krok1+" + "+krok2+" + "+krok3+" + "+krok4+" = "+suma);
+			</script>
+		</div>
+	</body>
+ </html>
+
