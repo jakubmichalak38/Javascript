@@ -1,0 +1,59 @@
+<textarea cols="100" rows="60">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadanko 20</title>
+</head>
+<body>
+    <script>
+      function AB_mic(){
+         var xa_mic= parseFloat(document.getElementById('xa').value);
+         var xb_mic= parseFloat(document.getElementById('xb').value);
+         var ya_mic= parseFloat(document.getElementById('ya').value);
+         var yb_mic= parseFloat(document.getElementById('yb').value);
+         var potega1 = Math.pow(xa_mic-xb_mic,2);
+         var potega2 = Math.pow(ya_mic-yb_mic,2);
+         var h = potega1+potega2;
+         var odc = Math.sqrt(h);
+         document.getElementById("nazwa").innerHTML ="Odcinek AB = "+odc.toFixed(2);
+         }
+            function BC_mic(){
+                var xb_mic= parseFloat(document.getElementById('xb').value);
+                var xc_mic= parseFloat(document.getElementById('xc').value);
+                var yb_mic= parseFloat(document.getElementById('yb').value);
+                var yc_mic= parseFloat(document.getElementById('yc').value);
+                var potega1 = Math.pow(xb_mic-xc_mic,2);
+                var potega2 = Math.pow(yb_mic-yc_mic,2);
+                var h = potega1+potega2;
+                var odc = Math.sqrt(h);
+                document.getElementById("nazwa").innerHTML ="Odcinek BC = "+odc.toFixed(2);
+            }
+            function AC_mic(){
+                var xa_mic= parseFloat(document.getElementById('xa').value);
+                var xc_mic= parseFloat(document.getElementById('xc').value);
+                var ya_mic= parseFloat(document.getElementById('ya').value);
+                var yc_mic= parseFloat(document.getElementById('yc').value);
+                var potega1 = Math.pow(xa_mic-xc_mic,2);
+                var potega2 = Math.pow(ya_mic-yc_mic,2);
+                var h = potega1+potega2;
+                var odc = Math.sqrt(h);
+                document.getElementById("nazwa").innerHTML ="Odcinek AC = "+odc.toFixed(2);
+                
+            }
+    </script>
+Podaj x punktu A: <input type="text" id="xa" value=""><br><br><br>
+Podaj y punktu A: <input type="text" id="ya" value=""><br><br><br>
+Podaj x punktu B: <input type="text" id="xb" value=""><br><br><br>
+Podaj y punktu B: <input type="text" id="yb" value=""><br><br><br>
+Podaj x punktu C: <input type="text" id="xc" value=""><br><br><br>
+Podaj y punktu C: <input type="text" id="yc" value=""><br><br><br>
+<input type="button" name="AB" value="Oblicz odcinek AB" Onclick="AB_mic()"><br><br>
+<input type="button" name="AC" value="Oblicz odcinek AC" Onclick="BC_mic()"><br><br>
+<input type="button" name="BC" value="Oblicz odcinek BC" Onclick="AC_mic()"><br><br>
+<div style="color:red;font-size:50px;"id="nazwa"></div>
+</body>
+</html>
+</textarea>

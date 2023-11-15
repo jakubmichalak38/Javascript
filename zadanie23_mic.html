@@ -1,0 +1,44 @@
+<html>
+<head>
+
+<title>
+Zadanko 23
+</title>
+
+
+<script type="text/javascript">
+function drabina(d,x)
+{
+d_liczba=parseFloat(d)
+x_liczba=parseFloat(x)
+V=d_liczba*d_liczba+x_liczba*x_liczba;
+wynik = Math.sqrt(V);
+document.getElementsByName('dlugosc')[0].value=wynik.toFixed(2);
+}
+function kat(d,x)
+{
+d_liczba=parseFloat(d)
+x_liczba=parseFloat(x)
+tg_alfa=d_liczba/x_liczba;
+radianty=Math.atan(tg_alfa);
+stopnie=(radianty * 180)/Math.PI;
+document.getElementsByName('alfa')[0].value=stopnie.toFixed(2);
+}
+</script>
+</head>
+<body>
+Obliczanie długości drabiny i kąta alfa<br><br>
+<form name="formularz" action="..." onsubmit="drabina(this.wysokosc.value,this.odleglosc.value);kat(this.wysokosc.value,this.odleglosc.value);return false">
+Podaj d = 
+<input size="6" name="wysokosc">
+Podaj x = 
+<input size="6" name="odleglosc"><br><br>
+<input TYPE="submit" Value="oblicz">
+<br><br>
+Drabina =
+<input size="6" name="dlugosc">
+Alfa = 
+<input size="6" name="alfa">
+</form>
+</body>
+</html>

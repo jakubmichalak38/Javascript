@@ -1,0 +1,41 @@
+<html>
+<head>
+
+<title>
+Zadanko 22 Michalak
+</title>
+
+
+<script type="text/javascript">
+function pole(a,b)
+{
+a_liczba=parseFloat(a)
+b_liczba=parseFloat(b)
+pole = a*b;
+document.getElementsByName('pole1')[0].value=pole;
+}
+function obwod(a,b)
+{
+a_liczba=parseFloat(a)
+b_liczba=parseFloat(b)
+obwod=2*a+2*b;
+document.getElementsByName('obwod1')[0].value=obwod;
+}
+</script>
+</head>
+<body>
+Obliczanie pola i obwodu prostokata<br><br>
+<form name="formularz" action="..." onsubmit="pole(this.boka.value,this.bokb.value);obwod(this.boka.value,this.bokb.value);return false">
+Podaj bok a = 
+<input size="6" name="boka">
+Podaj bok b = 
+<input size="6" name="bokb"><br><br>
+<input TYPE="submit" Value="oblicz">
+<br><br>
+pole =
+<input size="6" name="pole1">
+obwod = 
+<input size="6" name="obwod1">
+</form>
+</body>
+</html>
