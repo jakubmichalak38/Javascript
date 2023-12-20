@@ -1,0 +1,155 @@
+<html>
+<head>
+<title>
+Funkcja Kwadratowa  
+</title>
+<script language="JavaScript">
+
+function Wierzcholek(a,b,c)
+{
+if (a == 0)
+{
+alert("Funkcja nie jest kwadratowa");
+return;
+}
+else{
+a=parseFloat(a)
+b=parseFloat(b)
+c=parseFloat(c)
+p = -b/2*a;
+
+delta=b*b-4*a*c
+q=-delta/4*a
+document.getElementsByName('W')[0].value="W("+q.toFixed(2) + ", " + delta.toFixed(2)+")";
+
+if(p>=0 && q>=0)
+{
+    document.getElementsByName('PK')[0].value="f(x)="+a+"(x-"+p+")^2+"+q;
+}
+
+if(p<0 && q>=0)
+{
+    document.getElementsByName('PK')[0].value="f(x)="+a+"(x+"+p*-1+")^2+"+q;
+}
+if(p<0 && q<0)
+{
+    document.getElementsByName('PK')[0].value="f(x)="+a+"(x+"+p*-1+")^2-"+q*-1;
+}
+if(p>=0 && q<0)
+{
+    document.getElementsByName('PK')[0].value="f(x)="+a+"(x-"+p+")^2-"+q*-1;
+}
+}
+
+}
+function Miejsca(a,b,c)
+{
+    if (a == 0)
+    {
+    alert("Funkcja nie jest kwadratowa");
+    return;
+    }
+    else{
+    delta = b*b-4*a*c
+    pd=Math.sqrt(delta)
+    x=-b/2*a
+    x1=(-b-pd)/2*a
+    x2=(-b+pd)/2*a
+    if(delta<0){
+        document.getElementsByName('M')[0].value ="Brak Miejsc zerowych";
+    }
+
+if(delta==0)
+{
+    document.getElementsByName('M')[0].value =x.toFixed(2);
+}
+if(delta>0)
+{
+    document.getElementsByName('M')[0].value ="x1="+x1.toFixed(2)+"    x2="+x2.toFixed(2);
+}
+} 
+}
+function iloczynowa(a,b,c)
+{
+if (a == 0)
+{
+alert("Funkcja nie jest kwadratowa");
+return;
+}
+else{
+p = -b/2*a;
+
+delta=b*b-4*a*c
+q=-delta/4*a
+x=-b/2*a
+x1=(-b-pd)/2*a
+x2=(-b+pd)/2*a
+if(delta<0){
+document.getElementsByName('PI')[0].value ="Brak postaci iloczynowej";
+}
+
+if(delta==0)
+{
+    document.getElementsByName('PI')[0].value ="f(x)="+a+"(x-"+x1+")(x-"+x2+")";
+}
+if(delta>0)
+{
+    document.getElementsByName('PI')[0].value ="f(x)="+a+"(x-"+x+")^2";
+}
+}
+}
+function przedzialy(a,b,c)
+{
+if (a == 0)
+{
+alert("Funkcja nie jest kwadratowa");
+return;
+}
+
+else{
+    p = -b/2*a;
+    if(a>0){
+        document.getElementsByName('PM')[0].value ="rosnaca (-oo,"+p+")  malejaca ("+p+",00";
+    }
+    if(a<0){
+        document.getElementsByName('PM')[0].value ="malejaca (-oo,"+p+")  rosnaca ("+p+",oo)";
+    }
+
+    
+}
+
+}
+</script>
+</head>
+<body>
+Funkcja Kwadratowa
+<br> <br>
+<form name="formularz" action="..." onsubmit="Wierzcholek(this.a.value,this.b.value,this.c.value); Miejsca(this.a.value,this.b.value,this.c.value); iloczynowa(this.a.value,this.b.value,this.c.value); przedzialy(this.a.value,this.b.value,this.c.value); return false">
+Podaj a=
+<input size="6" name="a">
+Podaj b=
+<input size="6" name="b">
+Podaj c=
+<input size="6" name="c">
+<br> <br>
+<input TYPE="submit" Value="oblicz" >
+<br> <br>
+<div style="color: green; font-size: 2cms">
+Wierzcholek = 
+<input size="12" name="W"><br><br>
+Miejsca zerowe=
+<input size="20" name="M"><br><br>
+Postac Kanoniczna
+<input size="20" name="PK"><br><br>
+Postac Iloczynowa
+<input size="20" name="PI"><br><br>
+Przedzialy  Monotoicznosci
+<input size="37" name="PM"><br><br>
+</div>
+</form>
+<table>
+<tr id="pokaz1"></tr>
+<tr id="pokaz2"></tr>
+</table>
+</body>
+</html>
